@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.periodtracker">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.example.periodtracker.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+
+    <application
+        android:name="demo.ads.AdsApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <activity
+            android:name="com.example.periodtracker.Allactivity.SplashScreen"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.periodtracker.Allactivity.LoginPinActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeLogin" />
+
+        <activity
+            android:name="com.example.periodtracker.Allactivity.MainActivity"
+            android:label="@string/app_name_toolbar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.periodtracker.Allactivity.CustomCalendarActivity"
+            android:label="@string/activity_calendar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NoteActivity"
+            android:label="@string/menu_add_note"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNote">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.SettingsActivity"
+            android:label="@string/app_name_toolbar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.PinInsertActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.CycleLenghtActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.PeriodLengthActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.OvulationActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.UnitsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.AccountsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.LanguageActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.MoodsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NewMoodActivity"
+            android:label="@string/menu_note_moods"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MoodsActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.periodtracker.Allactivity.PillsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NewPillActivity"
+            android:label="@string/pills_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.PillsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.SymptomsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NewSymptomActivity"
+            android:label="@string/menu_note_symptoms"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SymptomsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.BackupActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.RestoreActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.OpenBackupEmailActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="gmail-ls"
+                    android:mimeType="application/octet-stream"
+                    android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.GommoActivity"
+            android:label="@string/menu_note"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting" />
+        <activity
+            android:name="com.example.periodtracker.Allactivity.PillsFragment5Activity"
+            android:label="@string/menu_note_others"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting" />
+        <activity
+            android:name="com.example.periodtracker.Allactivity.LegendaCalendarActivity"
+            android:label="@string/menu_calendar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeLegenda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.CustomCalendarActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.ShowHideActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.LogActivity"
+            android:label="@string/app_name_toolbar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNote">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.ChartsActivity"
+            android:label="@string/app_name_toolbar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNote">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NotificationsActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NotificationDetailActivity"
+            android:label="@string/settings_notifiche"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.NotificationsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.NewAlarmActivity"
+            android:label="@string/settings_notifiche"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.NotificationsActivity" />
+        </activity>
+        <activity
+            android:name="com.example.periodtracker.Allactivity.PregnancyActivity"
+            android:label="@string/app_name_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeSetting">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.periodtracker.Allactivity.SettingsActivity" />
+        </activity>
+
+        <receiver
+            android:name="com.example.periodtracker.servise.EvaBootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.periodtracker.servise.EvaAlarmReceiver"
+            android:enabled="true" />
+
+        <service android:name="com.example.periodtracker.servise.EvaSchedulingService" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" /> <!-- Activity required to show ad overlays. -->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.periodtracker.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+
+        <activity
+            android:name="com.example.periodtracker.pill_reminder.Pill_MainActivity"
+            android:theme="@style/AppThemeNote" />
+        <activity
+            android:name="com.example.periodtracker.pill_reminder.ReminderAddActivity"
+            android:label="@string/title_activity_add_reminder"
+            android:theme="@style/AppThemeNote" />
+        <activity
+            android:name="com.example.periodtracker.pill_reminder.ReminderEditActivity"
+            android:label="@string/title_activity_edit_reminder"
+            android:theme="@style/AppThemeNote"
+
+            />
+
+        <receiver android:name="com.example.periodtracker.pill_reminder.AlarmReceiver"
+            android:exported="true"/>
+        <receiver
+            android:name="com.example.periodtracker.pill_reminder.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
